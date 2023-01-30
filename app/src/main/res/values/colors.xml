@@ -8,4 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="textfield_bg">#1E262C</color>
+    <color name="blue_bt">#636AF6</color>
+    <color name="grey_link">#AFB8BB</color>
 </resources>
