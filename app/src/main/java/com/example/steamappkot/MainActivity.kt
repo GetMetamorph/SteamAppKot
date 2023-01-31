@@ -6,7 +6,7 @@ import android.os.Bundle
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_main)
 //        if (BuildConfig.DEBUG) {
 //            Firebase.database.useEmulator("10.0.2.2", 9000)
 //            Firebase.auth.useEmulator("10.0.2.2", 9099)
