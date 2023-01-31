@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "839825057121",
-    "project_id": "steamappkotlin",
-    "storage_bucket": "steamappkotlin.appspot.com"
+    "project_number": "910544330843",
+    "project_id": "steamappkot-61998",
+    "storage_bucket": "steamappkot-61998.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:839825057121:android:13e4a895a42535316f5120",
+        "mobilesdk_app_id": "1:910544330843:android:6a27e0714756420c535f7e",
         "android_client_info": {
           "package_name": "com.example.steamappkot"
         }
       },
       "oauth_client": [
         {
-          "client_id": "839825057121-j6crhod08e7bbm787v1tlmnnn0bl5mju.apps.googleusercontent.com",
+          "client_id": "910544330843-hp6u4s2jvtpeanjlga88vml13t9ifbcl.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAc3lgDeRczIMRZDaDskS2ygDrssnxV81A"
+          "current_key": "AIzaSyDj5-Kr5oYzqa0ZqRY23mgSA_Iyu7_U7fo"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "839825057121-j6crhod08e7bbm787v1tlmnnn0bl5mju.apps.googleusercontent.com",
+              "client_id": "910544330843-hp6u4s2jvtpeanjlga88vml13t9ifbcl.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
