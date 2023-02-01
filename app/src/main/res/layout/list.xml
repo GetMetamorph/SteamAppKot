@@ -13,13 +13,13 @@
         android:id="@+id/bg_pattern"
         android:layout_width="450dp"
         android:layout_height="160dp"
-        android:tint="#9F000000"
         android:scaleType="centerCrop"
         android:src="@drawable/gamebackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#9F000000" />
 
     <ImageView
         android:id="@+id/item_image"

@@ -18,17 +18,19 @@ data class Response(
     val rollup_date: Int,
     val ranks: ArrayList<Rank>
 )
+val apiKey: String = System.getenv("STEAM_API_KEY")
 
 interface SteamAPI {
+
     //In get add the follow of the url ex: https://https://api.steampowered.com/ become https://https://api.steampowered.com/GetMostPlayedGames/
     @GET("ISteamChartsService/GetMostPlayedGames/v1/?")
-    fun getTodos() : Deferred<List<Response>>
+    fun getMostPlayedGames() : Deferred<List<Response>>
 
     //https://api.steampowered.com/ISteamChartsService/GetMostPlayedGames/v1/?
-
 }
-class CallAPI {
-    val api = Retrofit.Builder()
+
+object CallAPI {
+    private val api = Retrofit.Builder()
         .baseUrl("https://https://api.steampowered.com/")
         .addConverterFactory(
             GsonConverterFactory.create())
@@ -38,7 +40,7 @@ class CallAPI {
         .build()
         .create(SteamAPI::class.java)
 
-    suspend fun todos() : List<Response> {
-        return api.getTodos().await()
+    suspend fun getMostPlayedGames() : List<Response> {
+        return api.getMostPlayedGames() .await()
     }
 }

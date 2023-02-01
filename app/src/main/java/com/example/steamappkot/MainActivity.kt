@@ -3,29 +3,37 @@ package com.example.steamappkot
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.Toast
+import com.example.steamappkot.databinding.ActivityMainBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.progressBar.visibility = View.VISIBLE
 
         GlobalScope.launch(Dispatchers.Main) {
 
             try {
-                val todos = withContext(Dispatchers.IO)
-                { val response = CallAPI.todos.await()
-                Log.i("tag", response.toString())}
-
-            } catch (e: Exception) {  }
+                val request = withContext(Dispatchers.IO)
+                {
+                    val response = CallAPI.getMostPlayedGames()
+                    Log.i("tag", response.toString())
+                }   // end of withContext
+                binding.progressBar.visibility = View.GONE
+                binding.alertMessage.text = request.toString()
+            } catch (e: Exception) {
+                Toast.makeText(this@MainActivity, e.message, Toast.LENGTH_SHORT).show()
+            }
         }
-//        if (BuildConfig.DEBUG) {
-//            Firebase.database.useEmulator("10.0.2.2", 9000)
-//            Firebase.auth.useEmulator("10.0.2.2", 9099)
-//            Firebase.storage.useEmulator("10.0.2.2", 9199)
-//        }
     }
 }
