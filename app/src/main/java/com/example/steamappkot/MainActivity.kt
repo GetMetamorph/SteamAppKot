@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
                         } else {
                             binding.itemText3name3.text = "Prix : " + games[2].game.data?.price_overview?.final_formatted
                         }
-
+                        
                         Glide.with(applicationContext).load(games[3].game.data?.header_image).into(binding.itemImagedestiny4)
                         binding.itemText1name4.text = games[3].game.data?.name ?: ""
                         binding.itemText2name4.text = games[3].game.data?.publishers?.get(0) ?: ""
