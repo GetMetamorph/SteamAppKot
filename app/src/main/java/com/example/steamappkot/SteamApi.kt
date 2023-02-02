@@ -31,7 +31,7 @@ interface SteamAPI {
 
 object CallAPI {
     private val api = Retrofit.Builder()
-        .baseUrl("https://https://api.steampowered.com/")
+        .baseUrl("https://store.steampowered.com/api/")
         .addConverterFactory(
             GsonConverterFactory.create())
         .addCallAdapterFactory(
