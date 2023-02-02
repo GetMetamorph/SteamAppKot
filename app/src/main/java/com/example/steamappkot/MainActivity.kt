@@ -6,18 +6,18 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.bumptech.glide.Glide
-import com.example.steamappkot.databinding.ActivityHomeBinding
+import com.example.steamappkot.databinding.ActivityMainBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityHomeBinding
+    private lateinit var binding: ActivityMainBinding
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityHomeBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
 
@@ -80,7 +80,6 @@ class MainActivity : AppCompatActivity() {
                             binding.itemText3name5.text = games[4].game.data?.price_overview?.final_formatted
                         }
                     }
-
                 }
             } catch (e: Exception) {
                 Toast.makeText(this@MainActivity, e.message, Toast.LENGTH_SHORT).show()

@@ -28,7 +28,7 @@ class ListAdapter(private val dataSet: ArrayList<ClipData.Item>): RecyclerView.A
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         // Create a new view, which defines the UI of the list item
         val view = LayoutInflater.from(viewGroup.context)
-            .inflate(R.layout.activity_home, viewGroup, false)
+            .inflate(R.layout.activity_main, viewGroup, false)
 
         return ViewHolder(view)
     }
