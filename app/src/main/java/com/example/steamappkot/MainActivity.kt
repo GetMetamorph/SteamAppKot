@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
                         if(games[0].game.data?.is_free == true) {
                             binding.itemText3name1.text = "Gratuit"
                         } else {
-                            binding.itemText3name1.text = games[0].game.data?.price_overview?.final_formatted
+                            binding.itemText3name1.text = "Prix : " + games[0].game.data?.price_overview?.final_formatted
                         }
 
                         Glide.with(applicationContext).load(games[1].game.data?.header_image).into(binding.itemImagedestiny2)
@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
                         if(games[1].game.data?.is_free == true) {
                             binding.itemText3name2.text = "Gratuit"
                         } else {
-                            binding.itemText3name2.text = games[1].game.data?.price_overview?.final_formatted
+                            binding.itemText3name2.text = "Prix : " + games[1].game.data?.price_overview?.final_formatted
                         }
 
                         Glide.with(applicationContext).load(games[2].game.data?.header_image).into(binding.itemImagedestiny3)
@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
                         if(games[2].game.data?.is_free == true) {
                             binding.itemText3name3.text = "Gratuit"
                         } else {
-                            binding.itemText3name3.text = games[2].game.data?.price_overview?.final_formatted
+                            binding.itemText3name3.text = "Prix : " + games[2].game.data?.price_overview?.final_formatted
                         }
 
                         Glide.with(applicationContext).load(games[3].game.data?.header_image).into(binding.itemImagedestiny4)
@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity() {
                         if(games[3].game.data?.is_free == true) {
                             binding.itemText3name4.text = "Gratuit"
                         } else {
-                            binding.itemText3name4.text = games[3].game.data?.price_overview?.final_formatted
+                            binding.itemText3name4.text = "Prix : " + games[3].game.data?.price_overview?.final_formatted
                         }
 
                         Glide.with(applicationContext).load(games[4].game.data?.header_image).into(binding.itemImagedestiny5)
@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity() {
                         if(games[4].game.data?.is_free == true) {
                             binding.itemText3name5.text = "Gratuit"
                         } else {
-                            binding.itemText3name5.text = games[4].game.data?.price_overview?.final_formatted
+                            binding.itemText3name5.text = "Prix : " + games[4].game.data?.price_overview?.final_formatted
                         }
                     }
                 }
