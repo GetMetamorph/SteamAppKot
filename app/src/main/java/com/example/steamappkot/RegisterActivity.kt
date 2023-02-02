@@ -36,6 +36,10 @@ class RegisterActivity : AppCompatActivity() {
 
             if (password != confirmPassword) {
                 binding.alertMessage.text = "Les mots de passe ne correspondent pas"
+                val id = resources.getIdentifier(R.drawable.warning.toString(), null, null)
+                binding.alertMessage.text = "Les mots de passe ne correspondent pas"
+                binding.iconClose.setImageDrawable(resources.getDrawable(id, null))
+                binding.passwordInput.background = resources.getDrawable(R.drawable.button_password_err_bg, null)
                 return@setOnClickListener
             }
 
