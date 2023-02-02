@@ -47,7 +47,8 @@ class MainActivity : AppCompatActivity() {
                         }
                         val button1: Button = findViewById(R.id.item_buttonmore1)
                         button1.setOnClickListener {
-
+                            val intent = Intent(this@MainActivity, GameDetailActivity::class.java)
+                            startActivity(intent)
                         }
 
                         Glide.with(applicationContext).load(games[1].game.data?.header_image).into(binding.itemImagedestiny2)
