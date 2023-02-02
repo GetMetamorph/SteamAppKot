@@ -5,13 +5,16 @@
     android:layout_height="match_parent"
     android:padding="10dp">
 
-    <EditText
+    <SearchView
         android:id="@+id/search_view"
         android:layout_width="0dp"
         android:layout_height="45dp"
         android:background="@drawable/rounded_corner"
+        android:searchIcon="@android:drawable/ic_menu_search"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
