@@ -33,7 +33,9 @@ data class Rank (
     @SerializedName("last_week_rank")
     val last_week_rank: Int,
     @SerializedName("peak_in_game")
-    val peak_in_game: Int
+    val peak_in_game: Int,
+    @SerializedName("detailed_description")
+    val detailed_description: String,
 )
 
 data class SteamAppResponse(
