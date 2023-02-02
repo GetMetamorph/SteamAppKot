@@ -24,13 +24,15 @@ class MainActivity : AppCompatActivity() {
         GlobalScope.launch(Dispatchers.Main) {
 
             try {
-                val request = withContext(Dispatchers.IO)
+                withContext(Dispatchers.IO)
                 {
                     val response = CallAPI.getMostPlayedGames()
                     Log.i("tag", response.toString())
+                    withContext((Dispatchers.Main)) {
+                        binding.progressBar.visibility = View.GONE
+                        binding.alertMessage.text = response.toString()
+                    }
                 }   // end of withContext
-                binding.progressBar.visibility = View.GONE
-                binding.alertMessage.text = request.toString()
             } catch (e: Exception) {
                 Toast.makeText(this@MainActivity, e.message, Toast.LENGTH_SHORT).show()
             }
