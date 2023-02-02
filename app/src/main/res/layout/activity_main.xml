@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1A2025">
-
-    <ImageView
-        android:id="@+id/bg_pattern"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/bg_pattern"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/header_title"
@@ -31,9 +19,9 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginTop="11dp"
-            android:layout_marginLeft="15dp"
-            android:text="Accueil"
-            android:textSize="25dp"
+            android:layout_marginStart="15dp"
+            android:text="@string/home"
+            android:textSize="25sp"
             android:textColor="@color/white"
             android:fontFamily="@font/googlesansregular"
             app:layout_constraintStart_toStartOf="parent"
@@ -41,25 +29,26 @@
             app:layout_constraintBottom_toBottomOf="parent"/>
 
         <ImageView
+            android:contentDescription="@string/wishlist_button"
             android:id="@+id/wishlist"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:src="@drawable/whishlist"
-            android:layout_marginRight="20dp"
+            android:layout_marginEnd="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
         <ImageView
             android:id="@+id/like"
+            android:contentDescription="@string/like_button"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:src="@drawable/like"
-            android:layout_marginRight="20dp"
+            android:layout_marginEnd="20dp"
             app:layout_constraintEnd_toStartOf="@id/wishlist"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -93,6 +82,7 @@
             android:layout_width="420dp"
             android:layout_height="200dp"
             android:scaleType="centerCrop"
+            android:contentDescription="@string/titanfall2img"
             android:src="@drawable/titanfall2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -105,7 +95,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:paddingLeft="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="0dp"
             android:layout_marginTop="50dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -117,7 +108,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 android:textColor="@color/white"
-                android:text="Nom du jeu" />
+                android:text="@string/game_name" />
 
             <TextView
                 android:id="@+id/item_text_2"
@@ -125,13 +116,15 @@
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:textColor="@color/white"
-                android:text="Nom de l'éditeur" />
+                android:text="@string/desc_game" />
 
             <Button
                 android:id="@+id/item_button"
                 android:layout_width="180dp"
-                android:layout_height="80dp"
-                android:text="En savoir plus"
+                android:layout_height="40dp"
+                android:text="@string/more_info"
+                android:background="@drawable/rounded_corner"
+                android:fontFamily="@font/proximaniva"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/item_text_2"
                 app:layout_constraintBottom_toBottomOf="parent"/>
@@ -139,12 +132,13 @@
         </LinearLayout>
 
         <ImageView
+            android:contentDescription="@string/gameshow"
             android:id="@+id/item_image"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="24dp"
-            android:src="@drawable/destiny2"
+            android:src="@drawable/titanfallimg"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
@@ -157,7 +151,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
-        android:text="Les meilleures ventes"
+        android:text="@string/best_sales"
         android:textColor="@color/white"
         android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -186,6 +180,7 @@
                 android:id="@+id/item_imagedestiny1"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
+                android:contentDescription="@string/game_image_list"
                 android:src="@drawable/destiny2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -196,7 +191,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:paddingLeft="16dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="0dp"
                 app:layout_constraintStart_toEndOf="@id/item_imagedestiny1"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent">
@@ -207,7 +203,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
                     android:textColor="#fff"
-                    android:text="Nom du jeu" />
+                    android:text="@string/game_name_list" />
 
                 <TextView
                     android:id="@+id/item_text_2name1"
@@ -215,7 +211,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
                     android:textColor="#fff"
-                    android:text="Nom de l'éditeur" />
+                    android:text="@string/editors_name" />
 
                 <TextView
                     android:id="@+id/item_text_3name1"
@@ -223,14 +219,14 @@
                     android:layout_height="wrap_content"
                     android:textSize="12sp"
                     android:textColor="#fff"
-                    android:text="Prix : 00,00€" />
+                    android:text="@string/price_list" />
             </LinearLayout>
 
             <Button
                 android:id="@+id/item_buttonmore1"
                 android:layout_width="100dp"
                 android:layout_height="0dp"
-                android:text="En savoir plus"
+                android:text="@string/more_info"
                 android:insetBottom="0dp"
                 android:insetTop="0dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -253,6 +249,7 @@
                 android:id="@+id/item_imagedestiny2"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
+                android:contentDescription="@string/game_image_list"
                 android:src="@drawable/destiny2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -263,7 +260,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:paddingLeft="16dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="0dp"
                 app:layout_constraintStart_toEndOf="@id/item_imagedestiny2"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent">
@@ -274,7 +272,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
                     android:textColor="#fff"
-                    android:text="Nom du jeu" />
+                    android:text="@string/game_name_list" />
 
                 <TextView
                     android:id="@+id/item_text_2name2"
@@ -282,7 +280,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
                     android:textColor="#fff"
-                    android:text="Nom de l'éditeur" />
+                    android:text="@string/editors_name" />
 
                 <TextView
                     android:id="@+id/item_text_3name2"
@@ -290,14 +288,14 @@
                     android:layout_height="wrap_content"
                     android:textSize="12sp"
                     android:textColor="#fff"
-                    android:text="Prix : 00,00€" />
+                    android:text="@string/price_list" />
             </LinearLayout>
 
             <Button
                 android:id="@+id/item_buttonmore2"
                 android:layout_width="100dp"
                 android:layout_height="0dp"
-                android:text="En savoir plus"
+                android:text="@string/more_info"
                 android:insetBottom="0dp"
                 android:insetTop="0dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -320,6 +318,7 @@
                 android:id="@+id/item_imagedestiny3"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
+                android:contentDescription="@string/game_image_list"
                 android:src="@drawable/destiny2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -330,7 +329,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:paddingLeft="16dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="0dp"
                 app:layout_constraintStart_toEndOf="@id/item_imagedestiny3"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent">
@@ -341,7 +341,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
                     android:textColor="#fff"
-                    android:text="Nom du jeu" />
+                    android:text="@string/game_name_list" />
 
                 <TextView
                     android:id="@+id/item_text_2name3"
@@ -349,7 +349,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
                     android:textColor="#fff"
-                    android:text="Nom de l'éditeur" />
+                    android:text="@string/editors_name" />
 
                 <TextView
                     android:id="@+id/item_text_3name3"
@@ -357,14 +357,14 @@
                     android:layout_height="wrap_content"
                     android:textSize="12sp"
                     android:textColor="#fff"
-                    android:text="Prix : 00,00€" />
+                    android:text="@string/price_list" />
             </LinearLayout>
 
             <Button
                 android:id="@+id/item_buttonmore3"
                 android:layout_width="100dp"
                 android:layout_height="0dp"
-                android:text="En savoir plus"
+                android:text="@string/more_info"
                 android:insetBottom="0dp"
                 android:insetTop="0dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -499,7 +499,7 @@
                 android:id="@+id/item_buttonmore5"
                 android:layout_width="100dp"
                 android:layout_height="0dp"
-                android:text="En savoir plus"
+                android:text="@string/more_info"
                 android:insetBottom="0dp"
                 android:insetTop="0dp"
                 app:layout_constraintEnd_toEndOf="parent"

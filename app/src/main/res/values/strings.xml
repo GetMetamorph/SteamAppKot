@@ -15,4 +15,17 @@
     <string name="desc_register">Veuillez saisir ces différentes informations, afin que vos listes soient sauvegardées.</string>
     <string name="username">Nom d\'utilisateur</string>
     <string name="verif_password">Vérification du mot de passe</string>
+    <string name="home">Accueil</string>
+    <string name="wishlist_button">wishlist_button</string>
+    <string name="like_button">like_button</string>
+    <string name="titanfall2img">titanfall2img</string>
+    <string name="game_name">TitanFall 2</string>
+    <string name="more_info">En savoir plus</string>
+    <string name="desc_game">Un jeu de robot futuriste</string>
+    <string name="gameshow">jeu en vedette</string>
+    <string name="best_sales">Les meilleures ventes</string>
+    <string name="game_image_list">game image list</string>
+    <string name="game_name_list">Nom du jeu</string>
+    <string name="editors_name">Nom de l\'éditeur</string>
+    <string name="price_list">Prix : 00,00€</string>
 </resources>
