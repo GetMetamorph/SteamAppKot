@@ -62,23 +62,94 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <fragment
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/search_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:layout="@layout/searchbar"
+        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/header_title" />
+        app:layout_constraintTop_toBottomOf="@id/header_title" >
+        <SearchView
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:background="@drawable/rounded_corner"
+            android:searchIcon="@android:drawable/ic_menu_search"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <fragment
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/game_details"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout="@layout/spotlight_game"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:gravity="center_vertical"
         app:layout_constraintTop_toBottomOf="@id/search_view"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:layout_width="420dp"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/titanfall2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearDetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:layout_marginTop="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/item_text_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:text="Nom du jeu" />
+
+            <TextView
+                android:id="@+id/item_text_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:text="Nom de l'éditeur" />
+
+            <Button
+                android:id="@+id/item_button"
+                android:layout_width="180dp"
+                android:layout_height="80dp"
+                android:text="En savoir plus"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/item_text_2"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/item_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="24dp"
+            android:src="@drawable/destiny2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/popularText"
@@ -92,14 +163,349 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/game_details" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/listView"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        tools:listitem="@layout/list"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/popularText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/popularText" />
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/listView1"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:gravity="center_vertical"
+            android:background="@drawable/rounded_corner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/item_imagedestiny1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/destiny2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                app:layout_constraintStart_toEndOf="@id/item_imagedestiny1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:id="@+id/item_text_1name1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="#fff"
+                    android:text="Nom du jeu" />
+
+                <TextView
+                    android:id="@+id/item_text_2name1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="#fff"
+                    android:text="Nom de l'éditeur" />
+
+                <TextView
+                    android:id="@+id/item_text_3name1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="#fff"
+                    android:text="Prix : 00,00€" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/item_buttonmore1"
+                android:layout_width="100dp"
+                android:layout_height="0dp"
+                android:text="En savoir plus"
+                android:insetBottom="0dp"
+                android:insetTop="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/listView2"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:gravity="center_vertical"
+            android:background="@drawable/rounded_corner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/listView1">
+
+            <ImageView
+                android:id="@+id/item_imagedestiny2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/destiny2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                app:layout_constraintStart_toEndOf="@id/item_imagedestiny2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:id="@+id/item_text_1name2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="#fff"
+                    android:text="Nom du jeu" />
+
+                <TextView
+                    android:id="@+id/item_text_2name2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="#fff"
+                    android:text="Nom de l'éditeur" />
+
+                <TextView
+                    android:id="@+id/item_text_3name2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="#fff"
+                    android:text="Prix : 00,00€" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/item_buttonmore2"
+                android:layout_width="100dp"
+                android:layout_height="0dp"
+                android:text="En savoir plus"
+                android:insetBottom="0dp"
+                android:insetTop="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/listView3"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:gravity="center_vertical"
+            android:background="@drawable/rounded_corner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/listView2">
+
+            <ImageView
+                android:id="@+id/item_imagedestiny3"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/destiny2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                app:layout_constraintStart_toEndOf="@id/item_imagedestiny3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:id="@+id/item_text_1name3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="#fff"
+                    android:text="Nom du jeu" />
+
+                <TextView
+                    android:id="@+id/item_text_2name3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="#fff"
+                    android:text="Nom de l'éditeur" />
+
+                <TextView
+                    android:id="@+id/item_text_3name3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="#fff"
+                    android:text="Prix : 00,00€" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/item_buttonmore3"
+                android:layout_width="100dp"
+                android:layout_height="0dp"
+                android:text="En savoir plus"
+                android:insetBottom="0dp"
+                android:insetTop="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/listView4"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:gravity="center_vertical"
+            android:background="@drawable/rounded_corner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/listView3">
+
+            <ImageView
+                android:id="@+id/item_imagedestiny4"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/destiny2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                app:layout_constraintStart_toEndOf="@id/item_imagedestiny4"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:id="@+id/item_text_1name4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="#fff"
+                    android:text="Nom du jeu" />
+
+                <TextView
+                    android:id="@+id/item_text_2name4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="#fff"
+                    android:text="Nom de l'éditeur" />
+
+                <TextView
+                    android:id="@+id/item_text_3name4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="#fff"
+                    android:text="Prix : 00,00€" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/item_buttonmore4"
+                android:layout_width="100dp"
+                android:layout_height="0dp"
+                android:text="En savoir plus"
+                android:insetBottom="0dp"
+                android:insetTop="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/listView5"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:gravity="center_vertical"
+            android:background="@drawable/rounded_corner"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/listView4">
+
+            <ImageView
+                android:id="@+id/item_imagedestiny5"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/destiny2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                app:layout_constraintStart_toEndOf="@id/item_imagedestiny5"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:id="@+id/item_text_1name5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="#fff"
+                    android:text="Nom du jeu" />
+
+                <TextView
+                    android:id="@+id/item_text_2name5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="#fff"
+                    android:text="Nom de l'éditeur" />
+
+                <TextView
+                    android:id="@+id/item_text_3name5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="#fff"
+                    android:text="Prix : 00,00€" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/item_buttonmore5"
+                android:layout_width="100dp"
+                android:layout_height="0dp"
+                android:text="En savoir plus"
+                android:insetBottom="0dp"
+                android:insetTop="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

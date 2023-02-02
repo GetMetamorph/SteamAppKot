@@ -2,32 +2,50 @@ import android.content.ClipData
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.steamappkot.R
 
-class ListAdapter: RecyclerView.Adapter<ListAdapter.ViewHolder>() {
-    private var items: List<ClipData.Item> = listOf()
+class ListAdapter(private val dataSet: ArrayList<ClipData.Item>): RecyclerView.Adapter<ListAdapter.ViewHolder>() {
+    /**
+     * Provide a reference to the type of views that you are using
+     * (custom ViewHolder)
+     */
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val textView1: TextView
+        val textView2: TextView
+        val textView3: TextView
 
-    fun setItems(items: List<ClipData.Item>) {
-        this.items = items
-        notifyDataSetChanged()
+        init {
+            // Define click listener for the ViewHolder's View
+            textView1 = view.findViewById(R.id.item_text_1)
+            textView2 = view.findViewById(R.id.item_text_2)
+            textView3 = view.findViewById(R.id.item_text_3)
+        }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.list, parent, false)
+    // Create new views (invoked by the layout manager)
+    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
+        // Create a new view, which defines the UI of the list item
+        val view = LayoutInflater.from(viewGroup.context)
+            .inflate(R.layout.activity_home, viewGroup, false)
+
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(items[position])
+    // Replace the contents of a view (invoked by the layout manager)
+    override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
+
+        // Get element from your dataset at this position and replace the
+        // contents of the view with that element
+        viewHolder.textView1.text = dataSet[position].text
+        viewHolder.textView2.text = dataSet[position].text
+        viewHolder.textView3.text = dataSet[position].text
     }
 
-    override fun getItemCount(): Int = items.size
+    // Return the size of your dataset (invoked by the layout manager)
+    override fun getItemCount() = dataSet.size
 
-    class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        fun bind(item: ClipData.Item) {
-            // Mettre à jour les vues de l'élément de liste avec les données de l'objet "item"
-        }
-    }
+
+
 }
