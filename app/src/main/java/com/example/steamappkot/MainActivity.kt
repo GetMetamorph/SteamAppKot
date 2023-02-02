@@ -29,8 +29,6 @@ class MainActivity : AppCompatActivity() {
                     val response = CallAPI.getMostPlayedGames()
                     Log.i("tag", response.toString())
                     withContext((Dispatchers.Main)) {
-                        //binding.progressBar.visibility = View.GONE
-                        //.alertMessage.text = response.toString()
                     }
 
                     for (ids in response) {

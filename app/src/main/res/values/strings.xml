@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">SteamAppKot</string>
-    <string name="forgot_password"><u>Mot de passe oublié</u></string></resources>
+    <string name="forgot_password"><u>Mot de passe oublié</u></string>
+    <string name="forgot_pwd">Mot de passe oublié</string>
+    <string name="desc_forgot_password">Veuillez saisir votre email afin de réinitialiser votre mot de passe</string>
+    <string name="e_mail">E-Mail</string>
+    <string name="resend_password">Renvoyer mon mot de passe</string>
+    <string name="bg">bg</string>
+    <string name="welcome">Bienvenue !</string>
+    <string name="login_desc">Veuillez vous connecter ou créer un nouveau compte pour utiliser l’application.</string>
+    <string name="password">Mot de passe</string>
+    <string name="login_button">Se connecter</string>
+    <string name="register_button">Créer un nouveau compte</string>
+    <string name="register">Inscription</string>
+    <string name="desc_register">Veuillez saisir ces différentes informations, afin que vos listes soient sauvegardées.</string>
+    <string name="username">Nom d\'utilisateur</string>
+    <string name="verif_password">Vérification du mot de passe</string>
+</resources>
