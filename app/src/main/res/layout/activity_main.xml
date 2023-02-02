@@ -7,6 +7,7 @@
     android:background="#1A2025">
 
     <ImageView
+        android:contentDescription="@string/bg"
         android:id="@+id/bg_pattern"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -76,6 +77,11 @@
             android:layout_height="45dp"
             android:background="@drawable/rounded_corner"
             android:searchIcon="@android:drawable/ic_menu_search"
+            android:queryHint="Rechercher un jeu"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -100,7 +106,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="UseAppTint" />
 
         <LinearLayout
             android:id="@+id/linearDetails"
@@ -407,6 +414,7 @@
             app:layout_constraintTop_toBottomOf="@id/listView3">
 
             <ImageView
+                android:contentDescription="@string/game_image_list"
                 android:id="@+id/item_imagedestiny4"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
@@ -420,7 +428,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:paddingLeft="16dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="0dp"
                 app:layout_constraintStart_toEndOf="@id/item_imagedestiny4"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent">
@@ -431,7 +440,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
                     android:textColor="#fff"
-                    android:text="Nom du jeu" />
+                    android:text="@string/game_name_list" />
 
                 <TextView
                     android:id="@+id/item_text_2name4"
@@ -439,7 +448,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
                     android:textColor="#fff"
-                    android:text="Nom de l'éditeur" />
+                    android:text="@string/editors_name" />
 
                 <TextView
                     android:id="@+id/item_text_3name4"
@@ -447,14 +456,14 @@
                     android:layout_height="wrap_content"
                     android:textSize="12sp"
                     android:textColor="#fff"
-                    android:text="Prix : 00,00€" />
+                    android:text="@string/price_list" />
             </LinearLayout>
 
             <Button
                 android:id="@+id/item_buttonmore4"
                 android:layout_width="100dp"
                 android:layout_height="0dp"
-                android:text="En savoir plus"
+                android:text="@string/more_info"
                 android:insetBottom="0dp"
                 android:insetTop="0dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -475,6 +484,7 @@
             app:layout_constraintTop_toBottomOf="@id/listView4">
 
             <ImageView
+                android:contentDescription="@string/game_image_list"
                 android:id="@+id/item_imagedestiny5"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
@@ -488,7 +498,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:paddingLeft="16dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="0dp"
                 app:layout_constraintStart_toEndOf="@id/item_imagedestiny5"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent">
@@ -499,7 +510,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
                     android:textColor="#fff"
-                    android:text="Nom du jeu" />
+                    android:text="@string/game_name_list" />
 
                 <TextView
                     android:id="@+id/item_text_2name5"
@@ -507,7 +518,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
                     android:textColor="#fff"
-                    android:text="Nom de l'éditeur" />
+                    android:text="@string/editors_name" />
 
                 <TextView
                     android:id="@+id/item_text_3name5"
@@ -515,7 +526,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="12sp"
                     android:textColor="#fff"
-                    android:text="Prix : 00,00€" />
+                    android:text="@string/price_list" />
             </LinearLayout>
 
             <Button
