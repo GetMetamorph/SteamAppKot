@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
 
         GlobalScope.launch(Dispatchers.Main) {
-
+            binding.linearList.visibility = android.view.View.GONE
             try {
                 withContext(Dispatchers.IO)
                 {
@@ -32,11 +32,13 @@ class MainActivity : AppCompatActivity() {
                     Log.i("tag", response.toString())
                     withContext((Dispatchers.Main)) {
                     }
-                    var games = ArrayList<SteamAppResponse>()
+                    val games = ArrayList<SteamAppResponse>()
                     for (ids in response) {
                         games.add(CallAPI.getAppDetail(ids.appid.toString()))
                     }
                     withContext(Dispatchers.Main) {
+                        binding.progressBar.visibility = android.view.View.GONE
+                        binding.linearList.visibility = android.view.View.VISIBLE
                         Glide.with(applicationContext).load(games[0].game.data?.header_image).into(binding.itemImagedestiny1)
                         binding.itemText1name1.text = games[0].game.data?.name ?: ""
                         binding.itemText2name1.text = games[0].game.data?.publishers?.get(0) ?: ""
