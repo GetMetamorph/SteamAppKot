@@ -41,10 +41,12 @@ class GameDetailActivity: AppCompatActivity() {
                 checked -> {
                     tvSwitchYes.setTextColor(ContextCompat.getColor(this,R.color.white))
                     tvSwitchNo.setTextColor(ContextCompat.getColor(this, R.color.white))
+                    binding.gameDescription.visibility = TextView.INVISIBLE
                 }
                 else -> {
                     tvSwitchYes.setTextColor(ContextCompat.getColor(this, R.color.white))
                     tvSwitchNo.setTextColor(ContextCompat.getColor(this,R.color.white))
+                    binding.gameDescription.visibility = TextView.VISIBLE
                 }
             }
         }
