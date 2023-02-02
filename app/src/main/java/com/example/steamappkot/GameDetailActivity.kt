@@ -1,6 +1,7 @@
 package com.example.steamappkot
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
@@ -48,8 +49,12 @@ class GameDetailActivity: AppCompatActivity() {
             }
         }
 
-        GlobalScope.launch(Dispatchers.Main) {
+        binding.back.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
+        GlobalScope.launch(Dispatchers.Main) {
             try {
                 withContext(Dispatchers.IO)
                 {
