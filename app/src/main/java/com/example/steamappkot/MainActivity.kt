@@ -29,9 +29,26 @@ class MainActivity : AppCompatActivity() {
                     val response = CallAPI.getMostPlayedGames()
                     Log.i("tag", response.toString())
                     withContext((Dispatchers.Main)) {
-                        binding.progressBar.visibility = View.GONE
-                        binding.alertMessage.text = response.toString()
+                        //binding.progressBar.visibility = View.GONE
+                        //.alertMessage.text = response.toString()
                     }
+
+                    for (ids in response) {
+                        val gameRes = CallAPI.getAppDetail(ids.appid.toString())
+                        Log.i("tag", gameRes.toString())
+                        withContext((Dispatchers.Main)) {
+                            binding.progressBar.visibility = View.GONE
+                            binding.alertMessage.text = gameRes.toString()
+                        }
+                    }
+
+                    /*
+                    val gameRes = CallAPI.getAppDetail("730")
+                    Log.i("tag", gameRes.toString())
+                    withContext((Dispatchers.Main)) {
+                        binding.progressBar.visibility = View.GONE
+                        binding.alertMessage.text = gameRes.toString()
+                        */
                 }   // end of withContext
             } catch (e: Exception) {
                 Toast.makeText(this@MainActivity, e.message, Toast.LENGTH_SHORT).show()
