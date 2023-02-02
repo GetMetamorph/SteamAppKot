@@ -1,9 +1,11 @@
 package com.example.steamappkot
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.steamappkot.databinding.ActivityMainBinding
@@ -43,6 +45,10 @@ class MainActivity : AppCompatActivity() {
                         } else {
                             binding.itemText3name1.text = "Prix : " + games[0].game.data?.price_overview?.final_formatted
                         }
+                        val button1: Button = findViewById(R.id.item_buttonmore1)
+                        button1.setOnClickListener {
+
+                        }
 
                         Glide.with(applicationContext).load(games[1].game.data?.header_image).into(binding.itemImagedestiny2)
                         binding.itemText1name2.text = games[1].game.data?.name ?: ""
@@ -52,6 +58,8 @@ class MainActivity : AppCompatActivity() {
                         } else {
                             binding.itemText3name2.text = "Prix : " + games[1].game.data?.price_overview?.final_formatted
                         }
+                        val button2: Button = findViewById(R.id.item_buttonmore2)
+                        button2.setOnClickListener { }
 
                         Glide.with(applicationContext).load(games[2].game.data?.header_image).into(binding.itemImagedestiny3)
                         binding.itemText1name3.text = games[2].game.data?.name ?: ""
@@ -61,6 +69,8 @@ class MainActivity : AppCompatActivity() {
                         } else {
                             binding.itemText3name3.text = "Prix : " + games[2].game.data?.price_overview?.final_formatted
                         }
+                        val button3: Button = findViewById(R.id.item_buttonmore3)
+                        button3.setOnClickListener { }
 
                         Glide.with(applicationContext).load(games[3].game.data?.header_image).into(binding.itemImagedestiny4)
                         binding.itemText1name4.text = games[3].game.data?.name ?: ""
@@ -70,6 +80,8 @@ class MainActivity : AppCompatActivity() {
                         } else {
                             binding.itemText3name4.text = "Prix : " + games[3].game.data?.price_overview?.final_formatted
                         }
+                        val button4: Button = findViewById(R.id.item_buttonmore4)
+                        button4.setOnClickListener { }
 
                         Glide.with(applicationContext).load(games[4].game.data?.header_image).into(binding.itemImagedestiny5)
                         binding.itemText1name5.text = games[4].game.data?.name ?: ""
@@ -79,6 +91,8 @@ class MainActivity : AppCompatActivity() {
                         } else {
                             binding.itemText3name5.text = "Prix : " + games[4].game.data?.price_overview?.final_formatted
                         }
+                        val button5: Button = findViewById(R.id.item_buttonmore5)
+                        button5.setOnClickListener { }
                     }
                 }
             } catch (e: Exception) {
@@ -86,4 +100,5 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
 }
