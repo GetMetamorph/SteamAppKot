@@ -2,6 +2,7 @@ package com.example.steamappkot
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.os.Build.VERSION_CODES.O
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -50,6 +51,7 @@ class MainActivity : AppCompatActivity() {
                         val button1: Button = findViewById(R.id.item_buttonmore1)
                         button1.setOnClickListener {
                             val intent = Intent(this@MainActivity, GameDetailActivity::class.java)
+                            intent.putExtra("game_id", response[0].appid.toString());
                             startActivity(intent)
                         }
 
@@ -62,7 +64,11 @@ class MainActivity : AppCompatActivity() {
                             binding.itemText3name2.text = "Prix : " + games[1].game.data?.price_overview?.final_formatted
                         }
                         val button2: Button = findViewById(R.id.item_buttonmore2)
-                        button2.setOnClickListener { }
+                        button2.setOnClickListener {
+                            val intent = Intent(this@MainActivity, GameDetailActivity::class.java)
+                            intent.putExtra("game_id", response[1].appid.toString());
+                            startActivity(intent)
+                        }
 
                         Glide.with(applicationContext).load(games[2].game.data?.header_image).into(binding.itemImagedestiny3)
                         binding.itemText1name3.text = games[2].game.data?.name ?: ""
@@ -73,7 +79,11 @@ class MainActivity : AppCompatActivity() {
                             binding.itemText3name3.text = "Prix : " + games[2].game.data?.price_overview?.final_formatted
                         }
                         val button3: Button = findViewById(R.id.item_buttonmore3)
-                        button3.setOnClickListener { }
+                        button3.setOnClickListener {
+                            val intent = Intent(this@MainActivity, GameDetailActivity::class.java)
+                            intent.putExtra("game_id", response[2].appid.toString());
+                            startActivity(intent)
+                        }
 
                         Glide.with(applicationContext).load(games[3].game.data?.header_image).into(binding.itemImagedestiny4)
                         binding.itemText1name4.text = games[3].game.data?.name ?: ""
@@ -84,7 +94,11 @@ class MainActivity : AppCompatActivity() {
                             binding.itemText3name4.text = "Prix : " + games[3].game.data?.price_overview?.final_formatted
                         }
                         val button4: Button = findViewById(R.id.item_buttonmore4)
-                        button4.setOnClickListener { }
+                        button4.setOnClickListener {
+                            val intent = Intent(this@MainActivity, GameDetailActivity::class.java)
+                            intent.putExtra("game_id", response[3].appid.toString());
+                            startActivity(intent)
+                        }
 
                         Glide.with(applicationContext).load(games[4].game.data?.header_image).into(binding.itemImagedestiny5)
                         binding.itemText1name5.text = games[4].game.data?.name ?: ""
@@ -95,7 +109,11 @@ class MainActivity : AppCompatActivity() {
                             binding.itemText3name5.text = "Prix : " + games[4].game.data?.price_overview?.final_formatted
                         }
                         val button5: Button = findViewById(R.id.item_buttonmore5)
-                        button5.setOnClickListener { }
+                        button5.setOnClickListener {
+                            val intent = Intent(this@MainActivity, GameDetailActivity::class.java)
+                            intent.putExtra("game_id", response[4].appid.toString());
+                            startActivity(intent)
+                        }
                     }
                 }
             } catch (e: Exception) {

@@ -54,7 +54,9 @@ data class SteamGameResponseData(
     val is_free: Boolean,
     val header_image: String,
     val background: String,
-    val price_overview: PriceOverview
+    val price_overview: PriceOverview,
+    @SerializedName("detailed_description")
+    val detailed_description: String,
 )
 
 data class PriceOverview(
