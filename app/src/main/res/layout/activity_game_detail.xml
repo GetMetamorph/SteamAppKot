@@ -71,7 +71,6 @@
         android:id="@+id/game_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/bg_gamedetails"
         android:scaleType="centerCrop"
         app:layout_constraintTop_toBottomOf="@id/header_title"
         app:layout_constraintStart_toStartOf="parent"
@@ -99,10 +98,6 @@
         app:layout_constraintEnd_toEndOf="@id/guideline3"
         app:layout_constraintStart_toStartOf="@id/guideline2"
         app:layout_constraintTop_toTopOf="@id/game_image">
-
-        
-
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

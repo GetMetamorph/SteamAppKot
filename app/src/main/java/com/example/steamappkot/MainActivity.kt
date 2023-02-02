@@ -79,7 +79,6 @@ class MainActivity : AppCompatActivity() {
                         } else {
                             binding.itemText3name5.text = games[4].game.data?.price_overview?.final_formatted
                         }
-
                     }
 
                 }
