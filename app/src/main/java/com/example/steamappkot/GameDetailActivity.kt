@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -33,6 +34,7 @@ class GameDetailActivity: AppCompatActivity() {
         binding = ActivityGameDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.reviews.visibility = LinearLayout.INVISIBLE
         switchOnOff = findViewById<SwitchCompat>(R.id.switchOnOff)
         tvSwitchYes = findViewById<TextView>(R.id.tvSwitchYes)
         tvSwitchNo = findViewById<TextView>(R.id.tvSwitchNo)
@@ -42,11 +44,13 @@ class GameDetailActivity: AppCompatActivity() {
                     tvSwitchYes.setTextColor(ContextCompat.getColor(this,R.color.white))
                     tvSwitchNo.setTextColor(ContextCompat.getColor(this, R.color.white))
                     binding.gameDescription.visibility = TextView.INVISIBLE
+                    binding.reviews.visibility = LinearLayout.VISIBLE
                 }
                 else -> {
                     tvSwitchYes.setTextColor(ContextCompat.getColor(this, R.color.white))
                     tvSwitchNo.setTextColor(ContextCompat.getColor(this,R.color.white))
                     binding.gameDescription.visibility = TextView.VISIBLE
+                    binding.reviews.visibility = LinearLayout.INVISIBLE
                 }
             }
         }
