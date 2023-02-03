@@ -28,5 +28,9 @@
     <string name="game_name_list">Nom du jeu</string>
     <string name="editors_name">Nom de l\'éditeur</string>
     <string name="price_list">Prix : 00,00€</string>
+    <string name="empty_likes">Vous n’avez encore pas liké de contenu. Cliquez sur le coeur pour en rajouter.</string>
+    <string name="wishlist_header">Ma liste de souhaits</string>
+    <string name="like_header">Mes likes</string>
+    <string name="empty_wishlist">Vous n’avez encore pas liké de contenu. Cliquez sur l’étoile pour en rajouter.</string>
     <string name="found_game_number">Nombre de résultats :</string>
 </resources>
