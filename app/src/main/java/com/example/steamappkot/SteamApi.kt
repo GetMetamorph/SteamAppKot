@@ -38,6 +38,22 @@ data class Rank (
     val detailed_description: String,
 )
 
+data class ReviewResponse(
+    val success: Int,
+    val query_summary: QuerySummary,
+    val reviews: ArrayList<Review>,
+)
+
+data class QuerySummary(
+    val review_score: ReviewResponse,
+    )
+
+data class Review(
+    val author: String,
+    val review: String,
+
+)
+
 data class SteamAppResponse(
     val game: SteamGameResponse
     )
@@ -73,6 +89,10 @@ interface SteamAPI {
     @GET("appdetails")
     fun getAppDetail(@Query("appids") id: String): Deferred<SteamAppResponse>
     //https://api.steampowered.com/ISteamChartsService/GetMostPlayedGames/v1/?
+
+    @GET("appreviews")
+    fun getReviews(@Query("appid") id: String): Deferred<QuerySummary>
+
 }
 
 object CallAPI {
@@ -93,6 +113,22 @@ object CallAPI {
         .client(okHttp)
         .build()
         .create(SteamAPI::class.java)
+
+    private val appreviews = Retrofit.Builder()
+        .baseUrl("https://store.steampowered.com/appreviews/")
+        .addConverterFactory(
+            GsonConverterFactory.create(
+                GsonBuilder()
+                    .registerTypeAdapter(QuerySummary::class.java, ReviewResponseDeserializer())
+                    .create()
+            ))
+        .addCallAdapterFactory(
+            CoroutineCallAdapterFactory()
+        )
+        .client(okHttp)
+        .build()
+        .create(SteamAPI::class.java)
+
 
 
     private val store = Retrofit.Builder()
@@ -117,6 +153,10 @@ object CallAPI {
     suspend fun getAppDetail(appid: String): SteamAppResponse {
         return store.getAppDetail(appid).await()
     }
+
+    suspend fun getReviews(appid: String): QuerySummary {
+        return appreviews.getReviews(appid).await()
+    }
 }
 
 class SteamResponseDeserializer : JsonDeserializer<SteamAppResponse> {
@@ -137,6 +177,29 @@ class SteamResponseDeserializer : JsonDeserializer<SteamAppResponse> {
         return SteamAppResponse(
             deserializer.fromJson(
                 jsonObject?.get(key), SteamGameResponse::class.java
+            )
+        )
+    }
+}
+
+class ReviewResponseDeserializer : JsonDeserializer<QuerySummary> {
+
+    companion object {
+        val deserializer: Gson = GsonBuilder().create()
+    }
+
+    override fun deserialize(
+        json: JsonElement?,
+        typeOfT: Type?,
+        context: JsonDeserializationContext?
+    ): QuerySummary {
+        // On récupère le JSON
+        val jsonObject = json?.asJsonObject
+        val key = jsonObject?.keySet()?.first { it.toIntOrNull() != null }
+
+        return QuerySummary(
+            deserializer.fromJson(
+                jsonObject?.get(key), ReviewResponse::class.java
             )
         )
     }

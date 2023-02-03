@@ -16,6 +16,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import okhttp3.OkHttpClient
+import okhttp3.Request
 
 class GameDetailActivity: AppCompatActivity() {
     private lateinit var binding: ActivityGameDetailBinding
@@ -34,6 +36,7 @@ class GameDetailActivity: AppCompatActivity() {
         binding = ActivityGameDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.gameDescription.visibility = TextView.VISIBLE
         binding.reviews.visibility = LinearLayout.INVISIBLE
         switchOnOff = findViewById<SwitchCompat>(R.id.switchOnOff)
         tvSwitchYes = findViewById<TextView>(R.id.tvSwitchYes)
@@ -73,6 +76,20 @@ class GameDetailActivity: AppCompatActivity() {
                         binding.gameName.text = response.game.data?.name
                         binding.editorsName.text = response.game.data?.publishers?.get(0) ?: ""
                     }
+
+                    val appId = gameId.toString()
+                    val url = "https://store.steampowered.com/appreviews/$appId?json=1"
+
+                    val request = Request.Builder()
+                        .url(url)
+                        .build()
+
+                    val client = OkHttpClient()
+                    val response2 = client.newCall(request).execute()
+
+                    val json = response2.body?.string()
+                    Log.i("tag", json.toString())
+                    println(json)
                 }
             } catch (e: Exception) {
                 Toast.makeText(this@GameDetailActivity, e.message, Toast.LENGTH_SHORT).show()
