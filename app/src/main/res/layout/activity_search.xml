@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1A2025">
@@ -92,83 +91,6 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/game_details"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:gravity="center_vertical"
-        app:layout_constraintTop_toBottomOf="@id/search_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageView
-            android:layout_width="420dp"
-            android:layout_height="200dp"
-            android:scaleType="centerCrop"
-            android:contentDescription="@string/titanfall2img"
-            android:src="@drawable/titanfall2"
-            android:tint="#5F000000"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="UseAppTint" />
-
-        <LinearLayout
-            android:id="@+id/linearDetails"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:paddingStart="16dp"
-            android:paddingEnd="0dp"
-            android:layout_marginTop="50dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
-
-            <TextView
-                android:id="@+id/item_text_1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:textColor="@color/white"
-                android:text="@string/game_name" />
-
-            <TextView
-                android:id="@+id/item_text_2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:textColor="@color/white"
-                android:text="@string/desc_game" />
-
-            <Button
-                android:id="@+id/item_button"
-                android:layout_width="180dp"
-                android:layout_height="40dp"
-                android:text="@string/more_info"
-                android:background="@drawable/rounded_corner"
-                android:fontFamily="@font/proximaniva"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/item_text_2"
-                app:layout_constraintBottom_toBottomOf="parent"/>
-
-        </LinearLayout>
-
-        <ImageView
-            android:contentDescription="@string/gameshow"
-            android:id="@+id/item_image"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="24dp"
-            android:src="@drawable/titanfallimg"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/popularText"
@@ -176,11 +98,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
-        android:text="@string/best_sales"
+        android:text="@string/found_game_number"
         android:textColor="@color/white"
         android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/game_details" />
+        app:layout_constraintTop_toBottomOf="@id/search_view" />
 
     <ProgressBar
         android:id="@+id/progressBar"
